@@ -15,15 +15,12 @@ import {
 const navigationItems = [
   { title: "Dashboard", url: "/", icon: Home },
   { title: "Projetos", url: "/projects", icon: CheckSquare },
-  { title: "Performance", url: "/analytics", icon: BarChart3 },
   { title: "Calendário", url: "/calendar", icon: Calendar },
-  { title: "Metas", url: "/goals", icon: Target },
-  { title: "Equipe", url: "/team", icon: Users },
+  { title: "Relatórios", url: "/reports", icon: BarChart3 },
 ];
 
-const reportsItems = [
-  { title: "ROI Campanhas", url: "/reports/roi", icon: TrendingUp },
-  { title: "Configurações", url: "/settings", icon: Settings },
+const settingsItems = [
+  { title: "Perfil", url: "/profile", icon: Settings },
 ];
 
 export function AppSidebar() {
@@ -77,11 +74,11 @@ export function AppSidebar() {
 
         <SidebarGroup>
           <SidebarGroupLabel className="text-muted-foreground text-xs font-semibold uppercase tracking-wider px-4">
-            Relatórios
+            Configurações
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {reportsItems.map((item) => (
+              {settingsItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild className="h-12">
                     <NavLink to={item.url} className={getNavClass}>

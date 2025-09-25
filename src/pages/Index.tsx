@@ -1,7 +1,7 @@
 import { AppLayout } from "@/components/layout/AppLayout";
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { StatsGrid } from "@/components/dashboard/StatsGrid";
-import { KanbanBoard } from "@/components/kanban/KanbanBoard";
+import { KanbanBoardReal } from "@/components/kanban/KanbanBoardReal";
 
 const Index = () => {
   return (
@@ -9,7 +9,7 @@ const Index = () => {
       <div className="space-y-6">
         <DashboardHeader />
         <StatsGrid />
-        <KanbanBoard />
+        <KanbanBoardReal />
       </div>
     </AppLayout>
   );
