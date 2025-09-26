@@ -88,31 +88,31 @@ export default function Auth() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-mesh relative overflow-hidden p-4">
+    <div className="min-h-screen flex items-center justify-center bg-black relative overflow-hidden p-4">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-10 -left-10 w-72 h-72 bg-gradient-primary rounded-full opacity-20 blur-3xl floating-animation"></div>
-        <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-gradient-secondary rounded-full opacity-20 blur-3xl floating-animation" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-accent rounded-full opacity-15 blur-3xl floating-animation" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute -top-10 -left-10 w-72 h-72 bg-gradient-primary rounded-full opacity-30 blur-3xl floating-animation"></div>
+        <div className="absolute -bottom-10 -right-10 w-96 h-96 bg-gradient-primary rounded-full opacity-20 blur-3xl floating-animation" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-gradient-primary rounded-full opacity-15 blur-3xl floating-animation" style={{ animationDelay: '4s' }}></div>
       </div>
       
-      <Card className="w-full max-w-md glass-effect animate-fade-in-up hover-lift relative z-10 shadow-elevated">
+      <Card className="w-full max-w-md glass-effect animate-fade-in-up hover-lift relative z-10 shadow-elevated border-red-500/30">
         <CardHeader className="text-center space-y-4">
-          <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow animate-pulse-glow">
+          <div className="mx-auto w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-glow animate-pulse-glow border border-red-500/50">
             <span className="text-2xl font-bold text-white">OF</span>
           </div>
-          <CardTitle className="text-3xl font-bold gradient-text">Organize Flow</CardTitle>
-          <CardDescription className="text-lg">
+          <CardTitle className="text-3xl font-bold text-white">Organize Flow</CardTitle>
+          <CardDescription className="text-lg text-gray-300">
             Plataforma moderna de organização para e-commerce
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <Tabs defaultValue="signin" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 bg-gradient-subtle p-1 rounded-xl">
-              <TabsTrigger value="signin" className="rounded-lg transition-all duration-300 data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-soft">
+            <TabsList className="grid w-full grid-cols-2 bg-black/50 p-1 rounded-xl border border-red-500/30">
+              <TabsTrigger value="signin" className="rounded-lg transition-all duration-300 text-white data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-glow">
                 Entrar
               </TabsTrigger>
-              <TabsTrigger value="signup" className="rounded-lg transition-all duration-300 data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-soft">
+              <TabsTrigger value="signup" className="rounded-lg transition-all duration-300 text-white data-[state=active]:bg-gradient-primary data-[state=active]:text-white data-[state=active]:shadow-glow">
                 Criar Conta
               </TabsTrigger>
             </TabsList>
@@ -120,7 +120,7 @@ export default function Auth() {
             <TabsContent value="signin" className="animate-fade-in">
               <form onSubmit={handleSignIn} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-sm font-medium">Email</Label>
+                  <Label htmlFor="email" className="text-sm font-medium text-white">Email</Label>
                   <Input
                     id="email"
                     name="email"
@@ -129,11 +129,11 @@ export default function Auth() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="h-12 px-4 bg-background/50 border-2 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    className="h-12 px-4 bg-black/50 border-2 border-red-500/30 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-sm font-medium">Senha</Label>
+                  <Label htmlFor="password" className="text-sm font-medium text-white">Senha</Label>
                   <Input
                     id="password"
                     name="password"
@@ -142,7 +142,7 @@ export default function Auth() {
                     value={formData.password}
                     onChange={handleInputChange}
                     required
-                    className="h-12 px-4 bg-background/50 border-2 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    className="h-12 px-4 bg-black/50 border-2 border-red-500/30 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <Button 
@@ -165,7 +165,7 @@ export default function Auth() {
             <TabsContent value="signup" className="animate-fade-in">
               <form onSubmit={handleSignUp} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="fullName" className="text-sm font-medium">Nome Completo</Label>
+                  <Label htmlFor="fullName" className="text-sm font-medium text-white">Nome Completo</Label>
                   <Input
                     id="fullName"
                     name="fullName"
@@ -174,11 +174,11 @@ export default function Auth() {
                     value={formData.fullName}
                     onChange={handleInputChange}
                     required
-                    className="h-12 px-4 bg-background/50 border-2 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    className="h-12 px-4 bg-black/50 border-2 border-red-500/30 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="signupEmail" className="text-sm font-medium">Email</Label>
+                  <Label htmlFor="signupEmail" className="text-sm font-medium text-white">Email</Label>
                   <Input
                     id="signupEmail"
                     name="email"
@@ -187,11 +187,11 @@ export default function Auth() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="h-12 px-4 bg-background/50 border-2 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    className="h-12 px-4 bg-black/50 border-2 border-red-500/30 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="signupPassword" className="text-sm font-medium">Senha</Label>
+                  <Label htmlFor="signupPassword" className="text-sm font-medium text-white">Senha</Label>
                   <Input
                     id="signupPassword"
                     name="password"
@@ -201,12 +201,12 @@ export default function Auth() {
                     onChange={handleInputChange}
                     required
                     minLength={6}
-                    className="h-12 px-4 bg-background/50 border-2 border-border/50 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    className="h-12 px-4 bg-black/50 border-2 border-red-500/30 focus:border-red-500 focus:ring-2 focus:ring-red-500/20 transition-all duration-300 text-white placeholder:text-gray-400"
                   />
                 </div>
                 <Button 
                   type="submit" 
-                  className="w-full h-12 bg-gradient-secondary hover:shadow-glow transition-all duration-300 text-base font-semibold" 
+                  className="w-full h-12 bg-gradient-primary hover:shadow-glow transition-all duration-300 text-base font-semibold border border-red-500/50" 
                   disabled={isLoading}
                 >
                   {isLoading ? (
