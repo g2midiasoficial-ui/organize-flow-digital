@@ -11,32 +11,30 @@ interface AppLayoutProps {
 export function AppLayout({ children }: AppLayoutProps) {
   return (
     <SidebarProvider>
-      <div className="min-h-screen flex w-full bg-background">
+      <div className="min-h-screen flex w-full bg-black">
         <AppSidebar />
         
         <div className="flex-1 flex flex-col">
           {/* Header */}
-          <header className="h-16 border-b bg-card/50 backdrop-blur-sm sticky top-0 z-10">
+          <header className="h-16 border-b border-red-500/20 bg-black/80 backdrop-blur-sm sticky top-0 z-10">
             <div className="flex items-center justify-between px-6 h-full">
               <div className="flex items-center gap-4">
-                <SidebarTrigger className="p-2" />
+                <SidebarTrigger className="p-2 text-white hover:text-red-500 transition-colors" />
                 <div className="relative max-w-md">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
                   <Input 
                     placeholder="Buscar tarefas, projetos..." 
-                    className="pl-10 bg-background/50"
+                    className="pl-10 bg-black/50 border-red-500/30 text-white placeholder:text-gray-500 focus:border-red-500"
                   />
                 </div>
               </div>
               
               <div className="flex items-center gap-3">
-                <Button variant="ghost" size="icon" className="relative">
+                <Button variant="ghost" size="icon" className="relative text-white hover:text-red-500 hover:bg-red-500/10">
                   <Bell className="w-5 h-5" />
-                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-warning rounded-full text-xs flex items-center justify-center">
-                    <span className="w-1.5 h-1.5 bg-warning-foreground rounded-full"></span>
-                  </span>
+                  <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                 </Button>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="text-white hover:text-red-500 hover:bg-red-500/10">
                   <User className="w-5 h-5" />
                 </Button>
               </div>
@@ -44,7 +42,7 @@ export function AppLayout({ children }: AppLayoutProps) {
           </header>
 
           {/* Main Content */}
-          <main className="flex-1 p-6 bg-gradient-subtle">
+          <main className="flex-1 p-6 bg-black">
             {children}
           </main>
         </div>

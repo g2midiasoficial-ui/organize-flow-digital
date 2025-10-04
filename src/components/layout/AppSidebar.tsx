@@ -32,28 +32,28 @@ export function AppSidebar() {
   const isActive = (path: string) => currentPath === path;
   const getNavClass = ({ isActive }: { isActive: boolean }) =>
     isActive 
-      ? "bg-primary/10 text-primary border-r-2 border-primary font-medium" 
-      : "hover:bg-accent hover:text-accent-foreground transition-smooth";
+      ? "bg-red-500/20 text-red-500 border-r-2 border-red-500 font-medium" 
+      : "text-gray-300 hover:bg-red-500/10 hover:text-white transition-all";
 
   return (
     <Sidebar className={isCollapsed ? "w-16" : "w-64"} collapsible="icon">
-      <SidebarContent className="bg-gradient-subtle">
-        <div className="p-4">
+      <SidebarContent className="bg-black border-r border-red-500/20">
+        <div className="p-4 border-b border-red-500/20">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <CheckSquare className="w-5 h-5 text-primary-foreground" />
+            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-glow">
+              <CheckSquare className="w-5 h-5 text-white" />
             </div>
             {!isCollapsed && (
               <div>
-                <h2 className="font-bold text-foreground">EcommerceFlow</h2>
-                <p className="text-xs text-muted-foreground">Organize & Acelere</p>
+                <h2 className="font-bold text-white">Organize Flow</h2>
+                <p className="text-xs text-gray-400">E-commerce Pro</p>
               </div>
             )}
           </div>
         </div>
 
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-muted-foreground text-xs font-semibold uppercase tracking-wider px-4">
+        <SidebarGroup className="mt-4">
+          <SidebarGroupLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wider px-4">
             Principal
           </SidebarGroupLabel>
           <SidebarGroupContent>
@@ -72,8 +72,8 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup>
-          <SidebarGroupLabel className="text-muted-foreground text-xs font-semibold uppercase tracking-wider px-4">
+        <SidebarGroup className="mt-8">
+          <SidebarGroupLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wider px-4">
             Configurações
           </SidebarGroupLabel>
           <SidebarGroupContent>

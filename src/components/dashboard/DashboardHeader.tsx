@@ -11,11 +11,11 @@ export function DashboardHeader() {
   });
 
   return (
-    <div className="relative rounded-2xl overflow-hidden mb-8 shadow-elevated">
+    <div className="relative rounded-2xl overflow-hidden mb-8 border border-red-500/30">
       <div 
-        className="bg-gradient-hero text-primary-foreground p-8"
+        className="bg-gradient-primary text-white p-8"
         style={{
-          backgroundImage: `linear-gradient(135deg, rgba(59, 130, 246, 0.9), rgba(147, 51, 234, 0.9)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(135deg, rgba(220, 38, 38, 0.9), rgba(127, 29, 29, 0.9)), url(${heroImage})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -33,15 +33,15 @@ export function DashboardHeader() {
             </div>
             
             <div className="flex items-center gap-3">
-              <Button variant="secondary" className="gap-2 bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30">
+              <Button variant="secondary" className="gap-2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white">
                 <Calendar className="w-4 h-4" />
                 Calendário
               </Button>
-              <Button variant="secondary" className="gap-2 bg-white/20 backdrop-blur-sm border-white/30 hover:bg-white/30">
+              <Button variant="secondary" className="gap-2 bg-white/10 backdrop-blur-sm border-white/20 hover:bg-white/20 text-white">
                 <Download className="w-4 h-4" />
                 Relatório
               </Button>
-              <Button variant="gradient" className="gap-2 shadow-glow">
+              <Button className="gap-2 bg-white text-red-600 hover:bg-gray-100 shadow-glow border border-white/50">
                 <Plus className="w-4 h-4" />
                 Nova Tarefa
               </Button>
